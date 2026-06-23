@@ -55,28 +55,23 @@ with st.sidebar:
         key="RespuestaFilterPasiva"
     )
 
-# --- FILTERING LOGIC ---
-def apply_filters(df, channels, products, stages, responses):
-    filtered = df.copy()
-    if channels:
-        filtered = filtered[filtered["CodigoCanal"].isin(channels)]
-    if products:
-        filtered = filtered[filtered["Producto"].isin(products)]
-    if stages:
-        filtered = filtered[filtered["RangoMoraInicio"].isin(stages)]
-    if responses:
-        filtered = filtered[filtered["NombreRespuesta"].isin(responses)]
-    return filtered
+# --- FILTERING LOGIC (Combined Block) ---
+def apply_filters_to_both(df_a, df_b, channels, products, stages, responses):
+    def _apply(df):
+        filtered = df.copy()
+        if channels:
+            filtered = filtered[filtered["CodigoCanal"].isin(channels)]
+        if products:
+            filtered = filtered[filtered["Producto"].isin(products)]
+        if stages:
+            filtered = filtered[filtered["RangoMoraInicio"].isin(stages)]
+        if responses:
+            filtered = filtered[filtered["NombreRespuesta"].isin(responses)]
+        return filtered
+    return _apply(df_a), _apply(df_b)
 
-df_a_filtered = apply_filters(
+df_a_filtered, df_b_filtered = apply_filters_to_both(
     df_a, 
-    selected_channels, 
-    selected_products, 
-    selected_stages, 
-    selected_responses
-)
-
-df_b_filtered = apply_filters(
     df_b, 
     selected_channels, 
     selected_products, 
