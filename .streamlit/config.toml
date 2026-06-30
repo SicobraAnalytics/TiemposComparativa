@@ -1,0 +1,13 @@
+[client]
+showErrorDetails = false  # Oculta excepciones crudas en producción, cambiar al subir !!!
+
+[theme]
+base = "light"
+primaryColor = "#74a710"
+#backgroundColor = "#f3f2ec"
+#secondaryBackgroundColor = "#bd2323"
+# textColor = "#f5f5f5"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false  # Apagamos la telemetría

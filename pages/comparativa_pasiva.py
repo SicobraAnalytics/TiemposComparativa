@@ -89,8 +89,8 @@ render_comparativo_layout(
     columna_id="IdGestion",
     columnas_tabla=cols_to_show,
     titulo_pagina="📊 Comparativa de Distribuciones de Tiempos (Pasiva)",
-    label_a="Distribución Actual Pasiva (A)",
-    label_b="Distribución Comparación Pasiva (B)",
+    label_a="Distribución previa a acotación de tiempos",
+    label_b="Distribución posterior a acotación de tiempos",
     colores_a=("#2E86C1", "#D6EAF8", "#1B4F72"),
     colores_b=("#16A085", "#E8F8F5", "#0E6251")
 )

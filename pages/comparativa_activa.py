@@ -88,7 +88,7 @@ render_comparativo_layout(
     columna_tiempo="DuracionAudio",
     columna_id="IdGestion",
     columnas_tabla=cols_to_show,
-    titulo_pagina="📊 Comparativa de Distribuciones de Tiempos",
-    label_a="Distribución Actual (A)",
-    label_b="Distribución Comparación (B)"
+    titulo_pagina="📊 Comparativa de Distribuciones de Tiempos (Activa)",
+    label_a="Distribución previa a acotación de tiempos",
+    label_b="Distribución posterior a acotación de tiempos"
 )
